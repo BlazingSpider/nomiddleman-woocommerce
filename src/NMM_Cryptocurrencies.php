@@ -48,7 +48,8 @@ class NMM_Cryptocurrencies {
             'GNO' => new NMM_Cryptocurrency('GNO', 'Gnosis', 18, 'gnosis_logo_small.png', 60, '', false, true, true, '0x6810e776880c02933d47db1b9fc05908e5386b96'),
             'MLN' => new NMM_Cryptocurrency('MLN', 'Melon', 18, 'melon_logo_small.png', 60, '', false, true, true, '0xbeb9ef514a379b997e0798fdcc901ee474b6d9a1'),
             'ZRX' => new NMM_Cryptocurrency('ZRX', '0x', 18, '0x_logo_small.png', 60, '', false, true, true, '0xe41d2489571d322189246dafa5ebde1f4699f498'),
-            'USDT' => new NMM_Cryptocurrency('USDT', 'USDT', 6, 'usdt_logo_small.png', 60, '', false, true, true, '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'),
+            'USDC' => new NMM_Cryptocurrency('USDC', 'USDC', 6, 'usdc_logo_small.png', 60, '', false, true, true, '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'),
+            'USDT' => new NMM_Cryptocurrency('USDT', 'USDT', 6, 'usdt_logo_small.png', 60, '', false, true, true, '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'),
 
             // no support
             'XMR' => new NMM_Cryptocurrency('XMR', 'Monero', 12, 'monero_logo_small.png', 60, 'ɱ', false, false, true, ''),
@@ -321,6 +322,9 @@ class NMM_Cryptocurrencies {
         }
         if ($cryptoId === 'APL') {
             return preg_match('/^APL-[a-zA-Z0-9-]{8,42}/', $address);
+        }
+        if ($cryptoId === 'USDC') {
+            return preg_match('/^0x[a-fA-F0-9]{40,42}/', $address);
         }
         if ($cryptoId === 'USDT') {
             return preg_match('/^0x[a-fA-F0-9]{40,42}/', $address);

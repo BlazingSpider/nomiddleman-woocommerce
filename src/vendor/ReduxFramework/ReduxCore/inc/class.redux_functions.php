@@ -51,7 +51,7 @@
              * @param   boolean $secure   HTTPS only.
              * @param   boolean $httponly Only set cookie on HTTP calls.
              */
-            public static function setCookie( $name, $value, $expire = 0, $path, $domain = null, $secure = false, $httponly = false ) {
+            public static function setCookie( $name, $value, $path, $expire = 0, $domain = null, $secure = false, $httponly = false ) {
                 if ( ! defined( 'WP_TESTS_DOMAIN' ) ) {
                     setcookie( $name, $value, $expire, $path, $domain, $secure, $httponly );
                 }

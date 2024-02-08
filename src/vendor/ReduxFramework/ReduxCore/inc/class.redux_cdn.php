@@ -18,7 +18,7 @@
             static public $_parent;
             static private $_set;
 
-            private static function is_enqueued( $handle, $list = 'enqueued', $is_script ) {
+            private static function is_enqueued( $handle, $is_script, $list = 'enqueued' ) {
                 if ( $is_script ) {
                     wp_script_is( $handle, $list );
                 } else {
@@ -42,7 +42,7 @@
                 }
             }
 
-            private static function _cdn( $register = true, $handle, $src_cdn, $deps, $ver, $footer_or_media, $is_script = true ) {
+            private static function _cdn( $handle, $src_cdn, $deps, $ver, $footer_or_media, $register = true, $is_script = true ) {
                 $tran_key = '_style_cdn_is_up';
                 if ( $is_script ) {
                     $tran_key = '_script_cdn_is_up';
@@ -101,7 +101,7 @@
                 }
             }
 
-            private static function _vendor_plugin( $register = true, $handle, $src_cdn, $deps, $ver, $footer_or_media, $is_script = true ) {
+            private static function _vendor_plugin( $handle, $src_cdn, $deps, $ver, $footer_or_media, $register = true, $is_script = true ) {
                 if ( class_exists( 'Redux_VendorURL' ) ) {
                     $src = Redux_VendorURL::get_url( $handle );
 

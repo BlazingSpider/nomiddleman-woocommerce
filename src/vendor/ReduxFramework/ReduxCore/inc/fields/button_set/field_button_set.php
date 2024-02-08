@@ -54,7 +54,7 @@
              * @access      public
              * @return      void
              */
-            function __construct( $field = array(), $value = '', $parent ) {
+            function __construct( $parent, $field = array(), $value = '' ) {
 
                 $this->parent = $parent;
                 $this->field  = $field;
